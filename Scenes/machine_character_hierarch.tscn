@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://3hcvd82qra66"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="RaycastJump" type="Node2D" parent="."]
+
+[node name="Right" type="RayCast2D" parent="RaycastJump"]
+
+[node name="Left" type="RayCast2D" parent="RaycastJump"]
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="CooldownAttackTimer" type="Timer" parent="Timers"]
+
+[node name="CooldownBetweenAttacksTimer" type="Timer" parent="Timers"]
+
+[node name="States" type="Node" parent="."]
+
+[node name="BaseState" type="Node" parent="States"]
+
+[node name="Landing" type="Node" parent="States/BaseState"]
+
+[node name="Jumping" type="Node" parent="States/BaseState"]
+
+[node name="Move" type="Node" parent="States/BaseState"]
+
+[node name="Idle" type="Node" parent="States/BaseState"]
+
+[node name="Fall" type="Node" parent="States/BaseState"]
+
+[node name="Attack" type="Node" parent="States/BaseState"]
+
+[node name="Factory" type="Node" parent="States"]
