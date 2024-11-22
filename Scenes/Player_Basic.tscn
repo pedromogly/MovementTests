@@ -3,6 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://buq01hwlqtibt" path="res://Sprites/_Idle.png" id="1_m680l"]
 [ext_resource type="Script" path="res://Scenes/player_basic.gd" id="1_uf133"]
 
+[sub_resource type="Animation" id="Animation_2vllq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_cpasx"]
 resource_name = "idle"
 loop_mode = 1
@@ -19,21 +34,6 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 7]
 }
 
-[sub_resource type="Animation" id="Animation_2vllq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_crw0m"]
 _data = {
 "RESET": SubResource("Animation_2vllq"),
@@ -41,12 +41,15 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ae0y"]
+radius = 11.0
 height = 38.0
 
-[node name="Node2D" type="CharacterBody2D" node_paths=PackedStringArray("animation_player")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("raycast_jump", "sprite", "animation_player")]
 light_mask = 2
 collision_layer = 2
 script = ExtResource("1_uf133")
+raycast_jump = NodePath("Raycasts")
+sprite = NodePath("Sprite2D")
 animation_player = NodePath("AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -61,11 +64,12 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Raycasts" type="Node2D" parent="."]
-visible = false
 
 [node name="Direita" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-11, 41)
 
 [node name="Esquerda" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(1, 41)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 21)
