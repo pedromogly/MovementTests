@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7nidw3e5hra3"]
+
+[ext_resource type="Script" uid="uid://bkyp12k7cnx8y" path="res://Scenes/ui_mochila.gd" id="1_21iyx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21iyx"]
+bg_color = Color(0.185236, 0.694944, 0.552368, 1)
+border_width_left = 20
+border_width_top = 20
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twy5b"]
+bg_color = Color(1.41986e-06, 0.365787, 0.268459, 0.54902)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3yqk7"]
+border_width_left = 5
+border_width_top = 5
+border_color = Color(0.39567, 0.390062, 0.382971, 1)
+corner_radius_top_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="Theme" id="Theme_21iyx"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_21iyx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 770.0
+offset_bottom = 572.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_21iyx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+offset_left = 218.0
+offset_top = 84.0
+offset_right = 572.0
+offset_bottom = 472.0
+theme_override_constants/separation = 5
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_twy5b")
+
+[node name="titulo" type="Label" parent="Panel/VBoxContainer/Panel"]
+layout_mode = 2
+offset_top = 5.0
+offset_right = 354.0
+offset_bottom = 33.0
+mouse_default_cursor_shape = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_3yqk7")
+text = "Mochila RPG"
+horizontal_alignment = 1
+
+[node name="vida" type="Label" parent="Panel/VBoxContainer/Panel"]
+layout_mode = 2
+offset_top = 56.0
+offset_right = 354.0
+offset_bottom = 79.0
+text = "Vida: 000/000"
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/Panel"]
+layout_mode = 2
+offset_top = 98.0
+offset_right = 354.0
+offset_bottom = 129.0
+theme = SubResource("Theme_21iyx")
+text = "Usar Poção"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer/Panel"]
+layout_mode = 2
+offset_top = 143.0
+offset_right = 354.0
+offset_bottom = 174.0
+text = "Se mutilar"
+
+[node name="feedback" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 221.0
+offset_top = 307.0
+offset_right = 575.0
+offset_bottom = 353.0
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 170
+text = "teste"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/VBoxContainer/Panel/Button" to="." method="_on_botao_potion_pressed"]
+[connection signal="button_up" from="Panel/VBoxContainer/Panel/Button2" to="." method="_mutilar"]

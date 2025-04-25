@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://db0i06mf272ep"]
+
+[ext_resource type="Texture2D" uid="uid://bq82ecr284oo3" path="res://imgs/gradient.png" id="1_5cd0j"]
+[ext_resource type="Theme" uid="uid://dhdgcvx0u678x" path="res://thema_gradient_test.tres" id="2_hbxdl"]
+[ext_resource type="Script" uid="uid://d4rnfsrs0d8" path="res://Scenes/button_tween.gd" id="3_fxa43"]
+[ext_resource type="PackedScene" uid="uid://dhqouh1qrvxw0" path="res://Card3D.tscn" id="4_vrdhx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7d012"]
+bg_color = Color(0.122067, 0.122067, 0.122067, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Animation" id="Animation_vrdhx"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_fxa43"]
+resource_name = "hover"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5iow8"]
+_data = {
+&"RESET": SubResource("Animation_vrdhx"),
+&"hover": SubResource("Animation_fxa43")
+}
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vrdhx"]
+viewport_path = NodePath(".")
+
+[node name="Login" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_horizontal_guides_ = [-42.0]
+metadata/_edit_vertical_guides_ = [-651.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.186309, 0.186309, 0.186309, 1)
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -634.0
+offset_right = -62.0
+offset_bottom = 471.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7d012")
+
+[node name="Polygon2D" type="Polygon2D" parent="ColorRect"]
+texture = ExtResource("1_5cd0j")
+polygon = PackedVector2Array(64, 350, 67, 343, 72, 336, 79, 330, 87, 326, 985, 326, 996, 328, 1004, 332, 1011, 340, 1015, 350)
+uv = PackedVector2Array(99.783, 248.401, 104.533, 237.319, 112.449, 226.236, 123.532, 216.737, 136.198, 210.404, 1557.95, 210.404, 1575.36, 213.57, 1588.03, 219.903, 1599.11, 232.569, 1605.44, 248.401)
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 1088.0
+offset_right = 881.0
+offset_bottom = 1166.0
+theme = ExtResource("2_hbxdl")
+text = "CLICK"
+script = ExtResource("3_fxa43")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect/Button"]
+libraries = {
+&"": SubResource("AnimationLibrary_5iow8")
+}
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 370.0
+offset_right = 676.0
+offset_bottom = 626.0
+texture = SubResource("ViewportTexture_vrdhx")
+
+[node name="SubViewport" parent="ColorRect/TextureRect" instance=ExtResource("4_vrdhx")]

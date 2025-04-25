@@ -11,16 +11,19 @@ config_version=5
 [application]
 
 config/name="vagabundeco-testes"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/tags=PackedStringArray("aprendizado")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/window_width_override=800
+window/size/window_height_override=600
 window/stretch/mode="canvas_items"
+window/dpi/allow_hidpi=false
+window/handheld/orientation=1
 
 [input]
 
@@ -54,3 +57,7 @@ Jump={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+anti_aliasing/screen_space_roughness_limiter/enabled=false
+anti_aliasing/screen_space_roughness_limiter/limit=0.05
+scaling_3d/fsr_sharpness=0.5
+anti_aliasing/quality/screen_space_aa=1

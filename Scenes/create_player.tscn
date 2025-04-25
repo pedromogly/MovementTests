@@ -1,0 +1,127 @@
+[gd_scene load_steps=5 format=3 uid="uid://crcviypfu105u"]
+
+[ext_resource type="Script" uid="uid://f8gbi7v6itfi" path="res://Scenes/player_invoke.gd" id="1_f1apg"]
+[ext_resource type="Theme" uid="uid://dhdgcvx0u678x" path="res://thema_gradient_test.tres" id="2_wds3a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_am242"]
+content_margin_top = 15.0
+content_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1apg"]
+bg_color = Color(0.6, 0.6, 0.6, 0.152941)
+
+[node name="Create_Player" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f1apg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1107.0
+offset_bottom = 1934.0
+color = Color(0.162353, 0.162353, 0.162353, 1)
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 57.0
+offset_right = 1046.0
+offset_bottom = 708.0
+
+[node name="Button" type="Button" parent="ColorRect/Panel"]
+layout_mode = 2
+offset_left = 43.0
+offset_top = 392.0
+offset_right = 945.0
+offset_bottom = 491.0
+theme = ExtResource("2_wds3a")
+theme_override_font_sizes/font_size = 70
+text = "Criar personagem"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Panel"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 34.0
+offset_right = 945.0
+offset_bottom = 330.0
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_am242")
+text = "Insert Nickname:"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 71
+placeholder_text = "nickname..."
+
+[node name="Panel2" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 745.0
+offset_right = 1045.0
+offset_bottom = 1368.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_f1apg")
+
+[node name="Button2" type="Button" parent="ColorRect/Panel2"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 354.0
+offset_right = 945.0
+offset_bottom = 453.0
+theme = ExtResource("2_wds3a")
+theme_override_font_sizes/font_size = 70
+text = "Procurar personagem"
+
+[node name="Button" type="Button" parent="ColorRect/Panel2"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 497.0
+offset_right = 948.0
+offset_bottom = 596.0
+theme = ExtResource("2_wds3a")
+theme_override_font_sizes/font_size = 70
+text = "Adicionar item aleatorio"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/Panel2"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = -4.0
+offset_right = 945.0
+offset_bottom = 292.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/Panel2/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_am242")
+text = "Search Nickname:"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect/Panel2/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 71
+placeholder_text = "nickname..."
+
+[node name="data" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 1449.0
+offset_right = 1046.0
+offset_bottom = 1847.0
+theme_override_font_sizes/font_size = 40
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="button_up" from="ColorRect/Panel/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="ColorRect/Panel2/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="ColorRect/Panel2/Button" to="." method="_on_button_button_up_3"]

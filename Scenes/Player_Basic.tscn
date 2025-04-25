@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0ok815u08mj7"]
 
 [ext_resource type="Texture2D" uid="uid://buq01hwlqtibt" path="res://Sprites/_Idle.png" id="1_m680l"]
-[ext_resource type="Script" path="res://Scenes/player_basic.gd" id="1_uf133"]
+[ext_resource type="Script" uid="uid://cqrqc24hedy8t" path="res://Scenes/player_basic.gd" id="1_uf133"]
 
 [sub_resource type="Animation" id="Animation_2vllq"]
 length = 0.001
@@ -36,8 +36,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_crw0m"]
 _data = {
-"RESET": SubResource("Animation_2vllq"),
-"idle": SubResource("Animation_cpasx")
+&"RESET": SubResource("Animation_2vllq"),
+&"idle": SubResource("Animation_cpasx")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ae0y"]

@@ -1,0 +1,46 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dhdgcvx0u678x"]
+
+[ext_resource type="FontFile" uid="uid://cti06hqjomfen" path="res://fonts/WinkyRough-VariableFont_wght.ttf" id="1_qg7tm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6m6o"]
+bg_color = Color(0.745203, 0.335532, 0, 1)
+border_width_left = 2
+border_width_bottom = 1
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojouu"]
+bg_color = Color(0.710448, 0.301392, 0, 1)
+border_width_left = 5
+border_width_bottom = 4
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+shadow_size = 4
+
+[resource]
+default_font = ExtResource("1_qg7tm")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 45
+Button/fonts/font = ExtResource("1_qg7tm")
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxFlat_b6m6o")
+Button/styles/normal = SubResource("StyleBoxFlat_ojouu")
+Button/styles/pressed = null
