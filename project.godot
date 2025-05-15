@@ -12,6 +12,7 @@ config_version=5
 
 config/name="vagabundeco-testes"
 config/tags=PackedStringArray("aprendizado")
+run/main_scene="uid://db0i06mf272ep"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

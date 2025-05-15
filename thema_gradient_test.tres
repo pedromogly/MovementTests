@@ -1,22 +1,17 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dhdgcvx0u678x"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dhdgcvx0u678x"]
 
 [ext_resource type="FontFile" uid="uid://cti06hqjomfen" path="res://fonts/WinkyRough-VariableFont_wght.ttf" id="1_qg7tm"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6m6o"]
-bg_color = Color(0.745203, 0.335532, 0, 1)
-border_width_left = 2
-border_width_bottom = 1
-corner_radius_top_left = 20
-corner_radius_bottom_right = 20
-shadow_size = 4
+[sub_resource type="Gradient" id="Gradient_qg7tm"]
+colors = PackedColorArray(0.760844, 0.297195, 0, 1, 0.82884, 0.0130976, 0.714547, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojouu"]
-bg_color = Color(0.710448, 0.301392, 0, 1)
-border_width_left = 5
-border_width_bottom = 4
-corner_radius_top_left = 20
-corner_radius_bottom_right = 20
-shadow_size = 4
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b6m6o"]
+gradient = SubResource("Gradient_qg7tm")
+fill_from = Vector2(1, 0.0530806)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ojouu"]
+texture = SubResource("GradientTexture2D_b6m6o")
 
 [resource]
 default_font = ExtResource("1_qg7tm")
@@ -41,6 +36,6 @@ Button/font_sizes/font_size = 45
 Button/fonts/font = ExtResource("1_qg7tm")
 Button/styles/disabled = null
 Button/styles/focus = null
-Button/styles/hover = SubResource("StyleBoxFlat_b6m6o")
-Button/styles/normal = SubResource("StyleBoxFlat_ojouu")
+Button/styles/hover = SubResource("StyleBoxTexture_ojouu")
+Button/styles/normal = SubResource("StyleBoxTexture_ojouu")
 Button/styles/pressed = null

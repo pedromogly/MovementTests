@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://db0i06mf272ep"]
+[gd_scene load_steps=14 format=3 uid="uid://db0i06mf272ep"]
 
 [ext_resource type="Texture2D" uid="uid://bq82ecr284oo3" path="res://imgs/gradient.png" id="1_5cd0j"]
 [ext_resource type="Texture2D" uid="uid://dmr4xm1112m4q" path="res://imgs/iconlogin.png" id="1_m7a0j"]
 [ext_resource type="StyleBox" uid="uid://scvb28nydubp" path="res://styleboxs/stylebox_input_login.tres" id="2_8164b"]
+[ext_resource type="StyleBox" uid="uid://stjacom24bxs" path="res://styleboxs/stylebox_input_login_focus.tres" id="2_dpd3p"]
 [ext_resource type="Theme" uid="uid://dhdgcvx0u678x" path="res://thema_gradient_test.tres" id="2_hbxdl"]
 [ext_resource type="Texture2D" uid="uid://h3svgkjfwhwo" path="res://imgs/passlogin.png" id="3_dpd3p"]
 [ext_resource type="Script" uid="uid://d4rnfsrs0d8" path="res://Scenes/button_tween.gd" id="3_fxa43"]
-[ext_resource type="PackedScene" uid="uid://dhqouh1qrvxw0" path="res://Card3D.tscn" id="4_vrdhx"]
+[ext_resource type="Script" uid="uid://du6kuplc58i11" path="res://Scenes/texture_rect.gd" id="8_dpd3p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7d012"]
 bg_color = Color(0.122067, 0.122067, 0.122067, 1)
@@ -27,8 +28,7 @@ _data = {
 &"hover": SubResource("Animation_fxa43")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_vrdhx"]
-viewport_path = NodePath("ColorRect/TextureRect/SubViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_8164b"]
 
 [node name="Login" type="Control"]
 layout_mode = 3
@@ -81,6 +81,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.340541, 0.340541, 0.340541, 1)
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_dpd3p")
 theme_override_styles/normal = ExtResource("2_8164b")
 placeholder_text = "username"
 expand_to_text_length = true
@@ -103,6 +104,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.340541, 0.340541, 0.340541, 1)
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_dpd3p")
 theme_override_styles/normal = ExtResource("2_8164b")
 placeholder_text = "username"
 expand_to_text_length = true
@@ -114,10 +116,11 @@ uv = PackedVector2Array(99.783, 248.401, 104.533, 237.319, 112.449, 226.236, 123
 
 [node name="Button" type="Button" parent="ColorRect"]
 layout_mode = 0
-offset_left = 171.0
-offset_top = 1088.0
-offset_right = 881.0
-offset_bottom = 1166.0
+offset_left = 188.0
+offset_top = 982.0
+offset_right = 867.0
+offset_bottom = 1100.0
+pivot_offset = Vector2(336, 59)
 theme = ExtResource("2_hbxdl")
 text = "LOGIN"
 script = ExtResource("3_fxa43")
@@ -127,12 +130,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_5iow8")
 }
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 420.0
-offset_top = 370.0
-offset_right = 676.0
-offset_bottom = 626.0
-texture = SubResource("ViewportTexture_vrdhx")
-
-[node name="SubViewport" parent="ColorRect/TextureRect" instance=ExtResource("4_vrdhx")]
+offset_left = 412.0
+offset_top = 372.0
+offset_right = 668.0
+offset_bottom = 628.0
+texture = SubResource("ViewportTexture_8164b")
+script = ExtResource("8_dpd3p")
